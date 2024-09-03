@@ -12,7 +12,7 @@ $product = new Product(
     "Des chaussures confortables pour le sport.", 
     50, 
     new DateTime('now'), 
-    new DateTime('now')  
+    new DateTime('now') ,
 );
 
 echo "<pre>";
