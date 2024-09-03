@@ -2,6 +2,7 @@
 
 
 require_once 'product.php';
+require_once 'category.php';
 
 
 $product = new Product(
