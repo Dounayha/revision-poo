@@ -152,6 +152,14 @@ class Product {
     public function getCreatedAt(): DateTime { return $this->createdAt; }
     public function getUpdatedAt(): DateTime { return $this->updatedAt; }
     public function getCategoryId(): int { return $this->category_id; }
-}
 
+    // Setters
+    public function setName(string $name): void { $this->name = $name; }
+    public function setPhotos(array $photos): void { $this->photos = $photos; }
+    public function setPrice(int $price): void { $this->price = $price; }
+    public function setDescription(string $description): void { $this->description = $description; }
+    public function setQuantity(int $quantity): void { $this->quantity = $quantity; }
+    public function setUpdatedAt(DateTime $updatedAt): void { $this->updatedAt = $updatedAt; }
+    public function setCategoryId(int $category_id): void { $this->category_id = $category_id; }
+}
 ?>
