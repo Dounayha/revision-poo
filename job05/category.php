@@ -1,29 +1,28 @@
 <?php 
 
-    class Category {
-        //* Properties
+class Category {
+    // Propriétés privées
+    private int $id;
+    private string $name;
+    private string $description;
+    private DateTime $createdAt;
+    private DateTime $updatedAt;
 
-        private int $id;
-        private string $name;
-        private string $description;
-        private DateTime $createdAt;
-        private DateTime $updatedAt;
+    // Constructeur avec paramètres optionnels
+    public function __construct(
+        int $id = 0,
+        string $name = '',
+        string $description = '',
+        ?DateTime $createdAt = null,
+        ?DateTime $updatedAt = null
+    ) {
+        $this->id = $id;
+        $this->name = $name;
+        $this->description = $description;
+        $this->createdAt = $createdAt ?: new DateTime();
+        $this->updatedAt = $updatedAt ?: new DateTime();
+    }
 
-        // ! Constructor
-
-        public function __construct(
-            int $id,
-            string $name,
-            string $description,
-            DateTime $createdAt,
-            DateTime $updatedAt
-        ) {
-            $this->id = $id;
-            $this->name = $name;
-            $this->description = $description;
-            $this->createdAt = $createdAt;
-            $this->updatedAt = $updatedAt;
-        }
 
         //*Get
         public function getId(): int {

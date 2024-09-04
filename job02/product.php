@@ -1,8 +1,7 @@
-<?php 
+<?php
 
 class Product {
-    //* Properties 
-
+    // Propriétés privées
     private int $id;
     private string $name;
     private array $photos;
@@ -11,9 +10,9 @@ class Product {
     private int $quantity;
     private DateTime $createdAt;
     private DateTime $updatedAt;
+    private int $category_id;  // Nouvelle propriété pour stocker l'id de la catégorie
 
-    // ! Construct
-
+    // Constructeur
     public function __construct(
         int $id,
         string $name,
@@ -22,9 +21,9 @@ class Product {
         string $description,
         int $quantity,
         DateTime $createdAt,
-        DateTime $updatedAt
-    )
-    {
+        DateTime $updatedAt,
+        int $category_id  // Paramètre ajouté pour initialiser category_id
+    ) {
         $this->id = $id;
         $this->name = $name;
         $this->photos = $photos;
@@ -32,11 +31,11 @@ class Product {
         $this->description = $description;
         $this->quantity = $quantity;
         $this->createdAt = $createdAt;
-        $this->updatedAt = $updatedAt;            
+        $this->updatedAt = $updatedAt;
+        $this->category_id = $category_id;  // Initialisation de category_id
     }
 
-    //* Get
-
+    // Getters
     public function getId(): int {
         return $this->id;
     }
@@ -48,16 +47,16 @@ class Product {
     public function getPhotos(): array {
         return $this->photos;
     }
-    
-    public function getPrice (): int {
+
+    public function getPrice(): int {
         return $this->price;
     }
 
     public function getDescription(): string {
         return $this->description;
     }
-    
-    public function getQuantity (): int {
+
+    public function getQuantity(): int {
         return $this->quantity;
     }
 
@@ -65,42 +64,49 @@ class Product {
         return $this->createdAt;
     }
 
-    public function getUpdatedAt(): Datetime {
+    public function getUpdatedAt(): DateTime {
         return $this->updatedAt;
     }
 
-    //*Set
+    public function getCategoryId(): int {
+        return $this->category_id;
+    }
 
-    public function setId (int $id): void {
+    // Setters
+    public function setId(int $id): void {
         $this->id = $id;
     }
 
-    public function setName (string $name): void {
+    public function setName(string $name): void {
         $this->name = $name;
     }
 
-    public function setPhotos (array $photos): void {
+    public function setPhotos(array $photos): void {
         $this->photos = $photos;
     }
 
-    public function setPrice (int $price): void {
+    public function setPrice(int $price): void {
         $this->price = $price;
     }
 
-    public function setDescription (string $description): void {
+    public function setDescription(string $description): void {
         $this->description = $description;
     }
 
-    public function setQuantity (int $quantity): void {
+    public function setQuantity(int $quantity): void {
         $this->quantity = $quantity;
     }
 
-    public function setCreatedAt (DateTime $createdAt): void {
+    public function setCreatedAt(DateTime $createdAt): void {
         $this->createdAt = $createdAt;
     }
 
-    public function setUpdatedAt (DateTime $updatedAt): void {
+    public function setUpdatedAt(DateTime $updatedAt): void {
         $this->updatedAt = $updatedAt;
+    }
+
+    public function setCategoryId(int $category_id): void {
+        $this->category_id = $category_id;
     }
 }
 

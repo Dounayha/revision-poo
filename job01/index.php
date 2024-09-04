@@ -1,21 +1,20 @@
 <?php
 
-// Inclure la classe Product
+
 require_once 'product.php';
 
-// Créer une instance de Product
+
 $product = new Product(
-    1, // id
-    "Chaussures de sport", // name
-    ["photo1.jpg", "photo2.jpg"], // photos
-    100, // price
-    "Des chaussures confortables pour le sport.", // description
-    50, // quantity
-    new DateTime('now'), // createdAt
-    new DateTime('now')  // updatedAt
+    1, 
+    "Chaussures de sport", 
+    ["photo1.jpg", "photo2.jpg"], 
+    100, 
+    "Des chaussures confortables pour le sport.", 
+    50, 
+    new DateTime('now'), 
+    new DateTime('now') ,
 );
 
-// Utiliser var_dump() pour afficher les propriétés de l'objet
 echo "<pre>";
 var_dump($product);
 echo "</pre>";
